@@ -1,0 +1,51 @@
+New tables for pgsnapstats
+
+
+try:
+		print "TABLE bgwriter"
+		cur = conn.cursor()
+		cur.execute("DROP TABLE if exists bgwriter CASCADE;") 
+		cur.execute("create table bgwriter (snapid bigint not null, checkpoints_timed bigint, checkpoints_req bigint,checkpoint_write_time double precision, checkpoint_sync_time double precision, buffers_checkpoint bigint, buffers_clean bigint, maxwritten_clean bigint, buffers_backend bigint, \
+		buffers_backend_fsync bigint, buffers_alloc bigint, stats_reset timestamp with time zone, CONSTRAINT pgsnapstats_bgwriter_pk PRIMARY KEY (snapid));") 
+		conn.commit()
+	except psycopg2.DatabaseError, e:
+		if conn:
+			conn.rollback()
+		print 'Error %s' % e
+
+
+		try:
+		print "TABLE bgwriter"
+		cur = conn.cursor()
+		cur.execute("DROP TABLE if exists bgwriter CASCADE;") 
+		cur.execute("create table bgwriter (snapid bigint not null, checkpoints_timed bigint, checkpoints_req bigint,checkpoint_write_time double precision, checkpoint_sync_time double precision, buffers_checkpoint bigint, buffers_clean bigint, maxwritten_clean bigint, buffers_backend bigint, \
+		buffers_backend_fsync bigint, buffers_alloc bigint, stats_reset timestamp with time zone, CONSTRAINT pgsnapstats_bgwriter_pk PRIMARY KEY (snapid));") 
+		conn.commit()
+	except psycopg2.DatabaseError, e:
+		if conn:
+			conn.rollback()
+		print 'Error %s' % e
+
+
+		try:
+		print "TABLE bgwriter"
+		cur = conn.cursor()
+		cur.execute("DROP TABLE if exists bgwriter CASCADE;") 
+		cur.execute("create table bgwriter (snapid bigint not null, checkpoints_timed bigint, checkpoints_req bigint,checkpoint_write_time double precision, checkpoint_sync_time double precision, buffers_checkpoint bigint, buffers_clean bigint, maxwritten_clean bigint, buffers_backend bigint, \
+		buffers_backend_fsync bigint, buffers_alloc bigint, stats_reset timestamp with time zone, CONSTRAINT pgsnapstats_bgwriter_pk PRIMARY KEY (snapid));") 
+		conn.commit()
+	except psycopg2.DatabaseError, e:
+		if conn:
+			conn.rollback()
+		print 'Error %s' % e
+
+
+New tables
+
+pg_stat_activity
+		select datname, pid, usesysid, usename,  application_name , client_addr, client_hostname, client_port, backend_start, xact_start, query_start, state_change, waiting, state, query from pg_stat_activity;
+		CREATE TABLE activity (snapid bigint not null, datname varchar(255), pid, integer, usesysid oid, usename varchar(255),  application_name , client_addr, client_hostname, client_port, backend_start, xact_start, query_start, state_change, waiting, state, query
+
+
+pg_stat_replication
+pg_stat_database_conflicts
